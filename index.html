@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 7th Monthsary Mg</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="/Taylor Swift - Love Story (Lyrics).mp3" type="audio/mp3"/>
+  </audio>
+
+  <div class="controls">
+    <button id="musicToggle"><span class="material-icons">music_note</span></button>
+  </div>
+
+  <div class="background-hearts" id="heartsContainer"></div>
+
+  <div class="wrapper">
+    <h1>Happy 7th Monthsary, Mg!</h1>
+    <div class="icon-line">
+      <span class="material-icons red">favorite</span>
+      <span class="material-icons red">favorite</span>
+      <span class="material-icons red">favorite</span>
+    </div>
+    <p class="intro">You make every day brighter, and today, I want to make you smile like you always do for me.</p>
+    <button id="revealBtn">Read My Heart</button>
+    <div class="love-letter" id="loveLetter"></div>
+
+    <div class="quiz" id="quiz">
+  <h2>Let’s Play a Love Quiz!</h2>
+  
+  <div class="question" id="q1">
+    <p>When did we become a couple?</p>
+    <button class="answer">February 14</button>
+    <button class="answer correct">February 16</button>
+    <button class="answer">February 18</button>
+    <button class="answer">February 13</button>
+  </div>
+  
+  <div class="question" id="q3">
+    <p>How much do you love me?</p>
+    <button class="answer">A little</button>
+    <button class="answer">More than yesterday</button>
+    <button class="answer">To the moon and back</button>
+    <button class="answer correct">Beyond infinity</button>
+  </div>
+  
+  <div class="question" id="q4">
+    <p>What’s my favorite food? (Hint: open your heart <3)</p>
+    <input type="text" class="open-answer" placeholder="Type your answer here" />
+    <button class="submit-open-answer">Submit</button>
+  </div>
+
+  <div class="question" id="q5">
+    <p>What’s the first thing we should say every time we chat?</p>
+    <button class="answer">Hi</button>
+    <button class="answer">Good morning</button>
+    <button class="answer correct">Sent a sticker</button>
+    <button class="answer">What are you doing?</button>
+  </div>
+
+  <div class="question" id="q6">
+    <p>What’s the one thing we shouldn’t forget?</p>
+    <button class="answer">Hug</button>
+    <button class="answer correct">A kiss</button>
+    <button class="answer">A joke</button>
+    <button class="answer">A selfie</button>
+  </div>
+
+  <div class="question" id="q7">
+    <p>Where was our first meal together outside?</p>
+    <button class="answer correct">Malaxiangguo</button>
+    <button class="answer">HotPot</button>
+    <button class="answer">Cake</button>
+    <button class="answer">Maocai</button>
+  </div>
+
+<div class="question" id="q8">
+  <p>When did you first know that you like/love me?</p>
+  <input type="text" class="love-answer" placeholder="Type your answer here" />
+  <button class="submit-love-answer">Submit</button>
+  <p class="validation-message" style="color: red; display: none; font-size: 14px;">Please type something first.</p>
+</div>
+
+<div class="custom-popup" id="loveAnswerPopup">
+  <div class="custom-popup-content">
+    <span class="material-icons" style="font-size: 40px; color: #f06292;">favorite</span>
+    <p id="lovePopupMessage"></p>
+    <button id="closeLovePopup" >Close</button>
+  </div>
+</div>
+  
+  <div id="quizResult" style="margin-top:20px; font-weight:bold;"></div>
+</div>
+
+
+    <div class="memory-slideshow" id="memorySlideshow">
+      <h2>Our Sweet Memories</h2>
+      <div class="slideshow-container">
+        <img id="slideshowImage" src="no1.jpg" alt="Memory Photo" />
+        <p id="slideshowCaption">Feb 11, 2025... Before we became lovers </p>
+      </div>
+      <button id="nextPhoto">Next Memory</button>
+    </div>
+
+<div class="love-letter-builder">
+  <h2>Build Your Love Letter 💌</h2>
+  <form id="letterForm">
+    <label>Why do you love me?</label>
+    <input type="text" name="reason" required />
+    <label>What's your favorite memory of us?</label>
+    <input type="text" name="memory" required />
+    <label>What's your message for me?</label>
+    <textarea name="message" rows="4" required></textarea>
+    <button type="submit">Create Letter</button>
+  </form>
+  
+  <div id="letterOutput"></div>
+  <button id="sendToEmail" style="display:none; margin-top: 15px;">Send to My Email 💌</button>
+  
+  <div id="popupMessage" style="
+      display:none;
+      opacity:0;
+      transition: opacity 0.5s ease;
+      background: #ffc0cb;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      color: #333;
+    "></div>
+</div>
+
+  <div class="modal" id="surpriseModal">
+    <div class="modal-content">
+      <h2>Surprise!</h2>
+      <p>You are the sweetest part of my life. Thank you for being mine.</p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <div id="popupMessage" class="popup-message"></div>
+  
+  <div class="custom-popup" id="foodAnswerPopup">
+  <div class="custom-popup-content" id="foodPopupContent">
+    <p id="foodPopupMessage"></p>
+    <button id="closeFoodPopup">Close</button>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const letterForm = document.getElementById("letterForm");
+    const letterOutput = document.getElementById("letterOutput");
+    const sendButton = document.getElementById("sendToEmail");
+    const popup = document.getElementById("popupMessage");
+    
+    emailjs.init("71hfeQKO_KzIU1wAC");
+    
+    letterForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const reason = letterForm.reason.value.trim();
+      const memory = letterForm.memory.value.trim();
+      const message = letterForm.message.value.trim();
+      
+      const finalLetter = `
+        <div style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+          <p><strong>Why I love you:</strong> ${reason}</p>
+          <p><strong>My favorite memory:</strong> ${memory}</p>
+          <p><strong>My message for you:</strong><br>${message}</p>
+        </div>
+      `;
+      
+      letterOutput.innerHTML = finalLetter;
+      sendButton.style.display = "inline-block";
+    });
+    
+    sendButton.addEventListener("click", function() {
+      const reason = letterForm.reason.value.trim();
+      const memory = letterForm.memory.value.trim();
+      const message = letterForm.message.value.trim();
+      
+      sendButton.disabled = true;
+      sendButton.textContent = "Sending...";
+      
+      emailjs.send("service_2flxv16", "template_s4dac6g", {
+        reason: reason,
+        memory: memory,
+        message: message
+      }).then(() => {
+        sendButton.textContent = "Sent! basahin ko yan hehe";
+        popup.innerHTML = `💌 Love letter sent to <strong>eithethnin349@gmail.com</strong>`;
+        popup.style.display = "block";
+        popup.style.opacity = "1";
+        setTimeout(() => {
+          popup.style.opacity = "0";
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 500);
+        }, 3000);
+      }).catch((error) => {
+        sendButton.disabled = false;
+        sendButton.textContent = "Send to My Email 💌";
+        popup.innerHTML = `❌ Failed to send: ${error.text || "Unknown error"}`;
+        popup.style.display = "block";
+        popup.style.opacity = "1";
+      });
+    });
+  });
+</script>
+</body>
+</html>
