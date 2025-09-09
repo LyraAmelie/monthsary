@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealBtn.addEventListener('click', () => {
-    typeLoveMessage("Happy 7 monthsary Babe. I can't believe it's been 7 months already. Time has just flown by, and I'm so happy it's been with you. I know things aren't always perfect, but I love how we handle challenges together.  I'm really proud of us and the relationship we've built. We've created so many amazing memories. I can't wait to see what the future holds for us. I'm excited for all the new memories we'll make and all the adventures we'll go on. Thank you for everything you do and for being you. Here’s to more months and years together. I love you so much! 💕", letterContainer, 20);
+    typeLoveMessage("Happy 7 monthsary Babe. I can't believe it's been 7 months already. Time has just flown by, and I'm so happy it's been with you. I know things aren't always perfect, but I love how we handle challenges together.  I'm really proud of us and the relationship we've built. We've created so many amazing memories. I can't wait to see what the future holds for us. I'm excited for all the new memories we'll make and all the adventures we'll go on. Thank you for everything you do and for being you. Here’s to more months and years together. I love you so much Babe 💕", letterContainer, 20);
     revealBtn.style.display = 'none';
     quiz.style.display = 'block';
     setTimeout(() => {
